@@ -3,8 +3,8 @@ using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
@@ -18,9 +18,14 @@ namespace DataAccessLayer.Concrete.Repositories
             c.SaveChanges();
         }
 
-        public List<Category> GetAll()
+        public List<Category> Get()
         {
             return _object.ToList();
+        }
+
+        public List<Category> Get(Expression<Func<Category, bool>> filter)
+        {
+            throw new NotImplementedException();
         }
 
         public void Insert(Category p)
