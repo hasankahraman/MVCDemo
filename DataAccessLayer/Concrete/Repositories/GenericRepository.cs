@@ -32,6 +32,11 @@ namespace DataAccessLayer.Concrete.Repositories
             return _object.Where(filter).ToList() ;
         }
 
+        public T GetByFilter(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter);
+        }
+
         public void Insert(T p)
         {
             _object.Add(p);
