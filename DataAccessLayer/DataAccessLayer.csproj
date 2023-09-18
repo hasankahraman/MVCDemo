@@ -73,6 +73,14 @@
     <Compile Include="Migrations\202309122017523_ContentsAndWritersBindedTogether.designer.cs">
       <DependentUpon>202309122017523_ContentsAndWritersBindedTogether.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309181858152_WriterClassChanged-AboutAdded.cs" />
+    <Compile Include="Migrations\202309181858152_WriterClassChanged-AboutAdded.designer.cs">
+      <DependentUpon>202309181858152_WriterClassChanged-AboutAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309182039430_WriterClassChanged-TitleAdded.cs" />
+    <Compile Include="Migrations\202309182039430_WriterClassChanged-TitleAdded.designer.cs">
+      <DependentUpon>202309182039430_WriterClassChanged-TitleAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -89,6 +97,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202309122017523_ContentsAndWritersBindedTogether.resx">
       <DependentUpon>202309122017523_ContentsAndWritersBindedTogether.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309181858152_WriterClassChanged-AboutAdded.resx">
+      <DependentUpon>202309181858152_WriterClassChanged-AboutAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309182039430_WriterClassChanged-TitleAdded.resx">
+      <DependentUpon>202309182039430_WriterClassChanged-TitleAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
