@@ -1,0 +1,35 @@
+﻿@model EntityLayer.Concrete.Heading
+@{
+    ViewBag.Title = "UpdateHeading";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateHeading</h2>
+
+<br />
+
+@using (Html.BeginForm("UpdateHeading", "Heading", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.Label("Id")
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Id)
+
+        @Html.Label("Name")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
+
+        @Html.Label("Category")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryId)
+
+        @Html.Label("Writer")
+        @Html.DropDownListFor(x => x.WriterId, (List<SelectListItem>)ViewBag.Writers, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.WriterId)
+
+        <br />
+
+        <button class="btn btn-warning">Update</button>
+    </div>
+}

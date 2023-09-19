@@ -81,6 +81,14 @@
     <Compile Include="Migrations\202309182039430_WriterClassChanged-TitleAdded.designer.cs">
       <DependentUpon>202309182039430_WriterClassChanged-TitleAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309191742564_WriterImagePropertySizeIncreasedTo250.cs" />
+    <Compile Include="Migrations\202309191742564_WriterImagePropertySizeIncreasedTo250.designer.cs">
+      <DependentUpon>202309191742564_WriterImagePropertySizeIncreasedTo250.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309191848519_StatusAddedForAllClassesInEntity.cs" />
+    <Compile Include="Migrations\202309191848519_StatusAddedForAllClassesInEntity.designer.cs">
+      <DependentUpon>202309191848519_StatusAddedForAllClassesInEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -103,6 +111,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309182039430_WriterClassChanged-TitleAdded.resx">
       <DependentUpon>202309182039430_WriterClassChanged-TitleAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309191742564_WriterImagePropertySizeIncreasedTo250.resx">
+      <DependentUpon>202309191742564_WriterImagePropertySizeIncreasedTo250.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309191848519_StatusAddedForAllClassesInEntity.resx">
+      <DependentUpon>202309191848519_StatusAddedForAllClassesInEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
