@@ -30,7 +30,7 @@ namespace BussinessLayer.Concrete
 
         public List<About> GetAll()
         {
-            return _aboutDAL.Get();
+            return _aboutDAL.Get().Where(x=> x.Status == true).ToList();
         }
 
         public About GetById(int id)
