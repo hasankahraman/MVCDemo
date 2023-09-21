@@ -7,29 +7,24 @@
 
 <h2>All Abouts</h2>
 
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>About</th>
+        <th>Activate</th>
+        <th>Deactivate</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Details1</td>
+            <td><a href="#" class="btn btn-success">Activate</a></td>
+            <td><a href="#" class="btn btn-danger">Deactivate</a></td>
+        </tr>
+    }
+</table>
+
 <button class="btn btn-dark" data-toggle="modal" data-target="#Modal1">Create New</button>
 
-<div class="modal" id="Modal1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header"><h2 class="modal-title">Create New About</h2></div>
-            <form method="post" action="/About/AddAbout">
-                <div class="modal-body">
-                    <label>Detail 1:</label>
-                    <input type="text" name="Details1" class="form-control" />
-                    <br />
-                    <label>Detail 2:</label>
-                    <input type="text" name="Details2" class="form-control" />
-                    <br />
-                    <label>Image 1:</label>
-                    <input type="text" name="Image1" class="form-control" />
-                    <br />
-                    <label>Image 2:</label>
-                    <input type="text" name="Image2" class="form-control" />
-                    <br />
-                    <button class="btn btn-outline-dark">Create</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+@Html.Action("PVAbout", "About")

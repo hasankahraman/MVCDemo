@@ -31,6 +31,7 @@ namespace MVCDemo.Controllers
 
             if (result.IsValid)
             {
+                about.Status = true;
                 manager.Add(about);
                 return RedirectToAction("Index");
             }
@@ -43,6 +44,11 @@ namespace MVCDemo.Controllers
                 return View();
             }
 
+        }
+
+        public PartialViewResult PVAbout()
+        {
+            return PartialView();
         }
     }
 }
