@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BussinessLayer.Concrete;
+using DataAccessLayer.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,16 @@ namespace MVCDemo.Controllers
 {
     public class ContactController : Controller
     {
-        // GET: Contact
+        ContactManager manager = new ContactManager(new EFContactDAL());
         public ActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult GetContactDetails(int id)
+        {
+            var contact = manager.GetById(id);
+            return View(contact);
         }
     }
 }
