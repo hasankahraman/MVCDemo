@@ -21,5 +21,9 @@ namespace MVCDemo.Controllers
             var contact = manager.GetById(id);
             return View(contact);
         }
+        public PartialViewResult PVMessageListMenu()
+        {
+            return PartialView();
+        }
     }
 }
