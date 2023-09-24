@@ -91,6 +91,10 @@
     <Compile Include="Migrations\202309191848519_StatusAddedForAllClassesInEntity.designer.cs">
       <DependentUpon>202309191848519_StatusAddedForAllClassesInEntity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202309241448239_messageclassaddedanddonesomechanges.cs" />
+    <Compile Include="Migrations\202309241448239_messageclassaddedanddonesomechanges.designer.cs">
+      <DependentUpon>202309241448239_messageclassaddedanddonesomechanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -119,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309191848519_StatusAddedForAllClassesInEntity.resx">
       <DependentUpon>202309191848519_StatusAddedForAllClassesInEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309241448239_messageclassaddedanddonesomechanges.resx">
+      <DependentUpon>202309241448239_messageclassaddedanddonesomechanges.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

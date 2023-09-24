@@ -13,7 +13,8 @@ namespace MVCDemo.Controllers
         ContactManager manager = new ContactManager(new EFContactDAL());
         public ActionResult Index()
         {
-            return View();
+            var contacts = manager.GetAll();
+            return View(contacts);
         }
 
         public ActionResult GetContactDetails(int id)
