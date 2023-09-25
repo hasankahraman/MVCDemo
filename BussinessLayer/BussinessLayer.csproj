@@ -79,6 +79,7 @@
     <Compile Include="ValidationRules\AboutValidator.cs" />
     <Compile Include="ValidationRules\CategoryValidator.cs" />
     <Compile Include="ValidationRules\HeadingValidator.cs" />
+    <Compile Include="ValidationRules\MessageValidator.cs" />
     <Compile Include="ValidationRules\WriterValidator.cs" />
   </ItemGroup>
   <ItemGroup />

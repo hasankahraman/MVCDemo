@@ -28,9 +28,14 @@ namespace BussinessLayer.Concrete
             _messageDAL.Delete(message);
         }
 
-        public List<Message> GetAll()
+        public List<Message> GetAllInbox()
         {
             return _messageDAL.Get().Where(x => x.Status == true).Where(x=> x.ReceiverMail == "admin@gmail.com").ToList();
+        }
+
+        public List<Message> GetAllSentbox()
+        {
+            return _messageDAL.Get().Where(x => x.SenderMail == "admin@gmail.com").Where(x => x.Status == true).ToList();
         }
 
         public Message GetById(int id)

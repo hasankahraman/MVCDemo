@@ -2311,6 +2311,9 @@
     <Content Include="Views\Contact\GetContactDetails.cshtml" />
     <Content Include="Views\Contact\PVMessageListMenu.cshtml" />
     <Content Include="Views\Message\Inbox.cshtml" />
+    <Content Include="Views\Message\Sentbox.cshtml" />
+    <Content Include="Views\Message\AddMessage.cshtml" />
+    <Content Include="Views\Message\GetMessageDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
