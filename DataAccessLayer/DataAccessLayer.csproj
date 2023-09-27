@@ -57,6 +57,7 @@
     <Compile Include="Abstract\IContactDAL.cs" />
     <Compile Include="Abstract\IContentDAL.cs" />
     <Compile Include="Abstract\IHeadingDAL.cs" />
+    <Compile Include="Abstract\IImageFileDAL.cs" />
     <Compile Include="Abstract\IMessageDAL.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IWriterDAL.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="EntityFramework\EFContactDAL.cs" />
     <Compile Include="EntityFramework\EFContentDAL.cs" />
     <Compile Include="EntityFramework\EFHeadingDAL.cs" />
+    <Compile Include="EntityFramework\EFImageFileDAL.cs" />
     <Compile Include="EntityFramework\EFMessageDAL.cs" />
     <Compile Include="EntityFramework\EFWriterDAL.cs" />
     <Compile Include="Migrations\202309122017523_ContentsAndWritersBindedTogether.cs" />
@@ -98,6 +100,10 @@
     <Compile Include="Migrations\202309252047337_DateTimeCreatedAddAddedForContactClass.cs" />
     <Compile Include="Migrations\202309252047337_DateTimeCreatedAddAddedForContactClass.designer.cs">
       <DependentUpon>202309252047337_DateTimeCreatedAddAddedForContactClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202309271951403_ImageFileClassAdded.cs" />
+    <Compile Include="Migrations\202309271951403_ImageFileClassAdded.designer.cs">
+      <DependentUpon>202309271951403_ImageFileClassAdded.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202309252047337_DateTimeCreatedAddAddedForContactClass.resx">
       <DependentUpon>202309252047337_DateTimeCreatedAddAddedForContactClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202309271951403_ImageFileClassAdded.resx">
+      <DependentUpon>202309271951403_ImageFileClassAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
