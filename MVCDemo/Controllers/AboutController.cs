@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
+    [Authorize]
     public class AboutController : Controller
     {
         AboutManager manager = new AboutManager(new EFAboutDAL());

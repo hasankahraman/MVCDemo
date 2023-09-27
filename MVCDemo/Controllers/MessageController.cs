@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
+    [Authorize]
     public class MessageController : Controller
     {
         MessageManager manager = new MessageManager(new EFMessageDAL());
