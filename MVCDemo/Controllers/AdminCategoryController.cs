@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    [Authorize]
+    [Authorize(Roles= "B")]
     public class AdminCategoryController : Controller
     {
 

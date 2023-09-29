@@ -54,6 +54,7 @@ namespace MVCDemo.Controllers
 
             if (result.IsValid)
             {
+                heading.Status = true;
                 manager.Add(heading);
                 return RedirectToAction("Index");
             }

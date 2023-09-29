@@ -1,11 +1,8 @@
 ﻿using BussinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace MVCDemo.Controllers
 {
@@ -25,7 +22,10 @@ namespace MVCDemo.Controllers
 
             if (user != null)
             {
-                return RedirectToAction("Index","AdminCategory");
+                FormsAuthentication.SetAuthCookie(user.Username, false);
+                Session["Username"] = user.Username;
+
+                return RedirectToAction("Inbox","Message");
             }
             else
             {

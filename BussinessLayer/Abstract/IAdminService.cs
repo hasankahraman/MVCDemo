@@ -15,5 +15,7 @@ namespace BussinessLayer.Abstract
         Admin GetById(int id);
         void Update(Admin admin);
         Admin Login(Admin admin);
+        String GetAdminRoles(string username);
+
     }
 }

@@ -33,6 +33,11 @@ namespace BussinessLayer.Concrete
             return _headingDAL.Get().Where(x=> x.Status == true).ToList();
         }
 
+        public List<Heading> GetAllByWriter(int writerId)
+        {
+            return _headingDAL.Get().Where(x => x.Status == true).Where(x=> x.WriterId == writerId).ToList();
+        }
+
         public Heading GetById(int id)
         {
             return _headingDAL.GetByFilter(x => x.Id == id);

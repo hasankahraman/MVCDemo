@@ -28,6 +28,11 @@ namespace BussinessLayer.Concrete
             _adminDAL.Delete(admin);
         }
 
+        public string GetAdminRoles(string username)
+        {
+            return _adminDAL.GetByFilter(x => x.Username == username).Role.ToString();
+        }
+
         public List<Admin> GetAll()
         {
             return _adminDAL.Get();
