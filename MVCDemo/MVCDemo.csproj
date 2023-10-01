@@ -2336,6 +2336,8 @@
     <Content Include="Views\Shared\_WriterLayout.cshtml" />
     <Content Include="Views\WriterPanel\WriterProfile.cshtml" />
     <Content Include="Views\WriterPanel\WritersHeading.cshtml" />
+    <Content Include="Views\WriterPanel\AddHeading.cshtml" />
+    <Content Include="Views\WriterPanel\UpdateHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

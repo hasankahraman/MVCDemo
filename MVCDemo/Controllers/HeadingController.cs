@@ -15,8 +15,8 @@ namespace MVCDemo.Controllers
     public class HeadingController : Controller
     {
         HeadingManager manager = new HeadingManager(new EFHeadingDAL());
-        CategoryManager CategoryManager = new CategoryManager(new EFCategoryDAL());
-        WriterManager WriterManager = new WriterManager(new EFWriterDAL());
+        CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
         public ActionResult Index()
         {
             var headings = manager.GetAll();
@@ -26,7 +26,7 @@ namespace MVCDemo.Controllers
         [HttpGet]
         public ActionResult AddHeading()
         {
-            List<SelectListItem> categories = (from x in CategoryManager.GetAll()
+            List<SelectListItem> categories = (from x in categoryManager.GetAll()
                                                select new SelectListItem
                                                { 
                                                    Text = x.Name,
@@ -34,7 +34,7 @@ namespace MVCDemo.Controllers
                                                }).ToList();
             ViewBag.Categories = categories;
 
-            List<SelectListItem> writers = (from x in WriterManager.GetAll()
+            List<SelectListItem> writers = (from x in writerManager.GetAll()
                                                select new SelectListItem
                                                {
                                                    Text = x.Name + " " + x.Surname,
@@ -72,7 +72,7 @@ namespace MVCDemo.Controllers
         public ActionResult UpdateHeading(int id)
         {
             var heading = manager.GetById(id);
-            List<SelectListItem> categories = (from x in CategoryManager.GetAll()
+            List<SelectListItem> categories = (from x in categoryManager.GetAll()
                                                select new SelectListItem
                                                {
                                                    Text = x.Name,
@@ -80,7 +80,7 @@ namespace MVCDemo.Controllers
                                                }).ToList();
             ViewBag.Categories = categories;
 
-            List<SelectListItem> writers = (from x in WriterManager.GetAll()
+            List<SelectListItem> writers = (from x in writerManager.GetAll()
                                             select new SelectListItem
                                             {
                                                 Text = x.Name + " " + x.Surname,

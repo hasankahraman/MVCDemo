@@ -1,0 +1,29 @@
+﻿@using EntityLayer.Concrete
+@model Heading
+
+@{
+    ViewBag.Title = "AddHeading";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+
+<h2>AddHeading</h2>
+
+<br />
+
+@using (Html.BeginForm("AddHeading", "WriterPanel", FormMethod.Post))
+{
+    <div class="form-group">
+
+        @Html.Label("Name")
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.Name)
+
+        @Html.Label("Category")
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.CategoryId)
+
+        <br />
+
+        <button class="btn btn-dark">Create</button>
+    </div>
+}
