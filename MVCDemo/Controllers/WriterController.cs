@@ -7,7 +7,6 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    [Authorize]
     public class WriterController : Controller
     {
         WriterManager manager = new WriterManager(new EFWriterDAL());

@@ -14,5 +14,7 @@ namespace BussinessLayer.Abstract
         void Delete(Writer writer);
         Writer GetById(int id);
         void Update(Writer writer);
+        Writer Login(Writer writer);
+        int GetWriterIdByEmail(string email);
     }
 }

@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    [Authorize]
     public class ContentController : Controller
     {
         ContentManager manager = new ContentManager(new EFContentDAL());

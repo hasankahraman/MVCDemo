@@ -6,9 +6,11 @@ using System.Web.Security;
 
 namespace MVCDemo.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         AdminManager manager = new AdminManager(new EFAdminDAL());
+        WriterManager writerManager = new WriterManager(new EFWriterDAL());
         [HttpGet]
         public ActionResult Index()
         {
@@ -31,8 +33,30 @@ namespace MVCDemo.Controllers
             {
                 return RedirectToAction("Index");
             }
+        }
 
+        [HttpGet]
+        public ActionResult WriterLogin()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult WriterLogin(Writer p)
+        {
+            var user = writerManager.Login(p);
+
+            if (user != null)
+            {
+                FormsAuthentication.SetAuthCookie(user.Email, false);
+                Session["Username"] = user.Email;
+
+                return RedirectToAction("MyContent", "WriterPanelContent");
+            }
+            else
+            {
+                return RedirectToAction("WriterLogin");
+            }
         }
     }
 }

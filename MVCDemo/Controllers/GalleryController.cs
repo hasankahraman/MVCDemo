@@ -8,7 +8,6 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
-    [Authorize]
     public class GalleryController : Controller
     {
         ImageFileManager manager = new ImageFileManager(new EFImageFileDAL());

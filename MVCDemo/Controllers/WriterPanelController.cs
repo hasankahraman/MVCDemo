@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.Web.Mvc;
 using System.Linq;
-
+using System.Collections.Specialized;
 
 namespace MVCDemo.Controllers
 {
@@ -22,9 +22,10 @@ namespace MVCDemo.Controllers
             return View();
         }
 
-        public ActionResult WritersHeading()
+        public ActionResult WritersHeading(string writerEmail)
         {
-            int writerId = 1;
+            writerEmail = (string)Session["Username"];
+            int writerId = writerManager.GetWriterIdByEmail(writerEmail);
             var headings = manager.GetAllByWriter(writerId);
             return View(headings);
         }
@@ -44,11 +45,14 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public ActionResult AddHeading(Heading heading)
         {
+            string email = (string)Session["Username"];
+            int writerId = writerManager.GetWriterIdByEmail(email);
+
             HeadingValidator validator = new HeadingValidator();
             FluentValidation.Results.ValidationResult result = validator.Validate(heading);
 
             heading.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
-            heading.WriterId = 1;
+            heading.WriterId = writerId;
             heading.Status = true;
 
             if (result.IsValid)
@@ -77,7 +81,6 @@ namespace MVCDemo.Controllers
                                                    Value = x.Id.ToString()
                                                }).ToList();
             ViewBag.Categories = categories;
-
             return View(heading);
         }
         [HttpPost]
@@ -99,6 +102,18 @@ namespace MVCDemo.Controllers
                 }
                 return View();
             }
+        }
+        public ActionResult DeleteHeading(int id)
+        {
+            var headingToDelete = manager.GetById(id);
+            headingToDelete.Status = false;
+            manager.Delete(headingToDelete);
+            return RedirectToAction("WritersHeading");
+        }
+        public ActionResult GetMessageDetails(int id)
+        {
+            var messages = manager.GetById(id);
+            return View(messages);
         }
     }
 }

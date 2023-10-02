@@ -1,5 +1,6 @@
 ﻿using BussinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -33,6 +34,16 @@ namespace BussinessLayer.Concrete
         public Writer GetById(int id)
         {
             return _writerDAL.GetByFilter(x=> x.Id == id);
+        }
+
+        public int GetWriterIdByEmail(string email)
+        {
+            return _writerDAL.GetByFilter(x => x.Email == email).Id;
+        }
+
+        public Writer Login(Writer writer)
+        {
+            return _writerDAL.GetByFilter(x => x.Email == writer.Email && x.Password == writer.Password);
         }
 
         public void Update(Writer writer)
