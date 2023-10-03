@@ -58,5 +58,12 @@ namespace MVCDemo.Controllers
                 return RedirectToAction("WriterLogin");
             }
         }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return RedirectToAction("Headings", "Default");
+        }
     }
 }

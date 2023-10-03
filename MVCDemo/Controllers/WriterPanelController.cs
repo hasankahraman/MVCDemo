@@ -7,6 +7,9 @@ using System;
 using System.Web.Mvc;
 using System.Linq;
 using System.Collections.Specialized;
+using PagedList;
+using PagedList.Mvc;
+
 
 namespace MVCDemo.Controllers
 {
@@ -114,6 +117,12 @@ namespace MVCDemo.Controllers
         {
             var messages = manager.GetById(id);
             return View(messages);
+        }
+
+        public ActionResult AllHeading(int page = 1)
+        {
+            var allheadings = manager.GetAll().ToPagedList(page, 8);
+            return View(allheadings);
         }
     }
 }
