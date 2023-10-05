@@ -9,7 +9,7 @@ using System.Linq;
 using System.Collections.Specialized;
 using PagedList;
 using PagedList.Mvc;
-
+using FluentValidation.Results;
 
 namespace MVCDemo.Controllers
 {
@@ -18,10 +18,34 @@ namespace MVCDemo.Controllers
         HeadingManager manager = new HeadingManager(new EFHeadingDAL());
         CategoryManager categoryManager = new CategoryManager(new EFCategoryDAL());
         WriterManager writerManager = new WriterManager(new EFWriterDAL());
+        WriterValidator validator = new WriterValidator();
 
         // GET: WriterPanel
+        [HttpGet]
         public ActionResult WriterProfile()
         {
+            var writerEmail = (string)Session["Username"];
+            var writerID = writerManager.GetWriterIdByEmail(writerEmail);
+            var writer = writerManager.GetById(writerID);
+            return View(writer);
+        }
+
+        public ActionResult WriterProfile(Writer writer)
+        {
+            ValidationResult result = validator.Validate(writer);
+
+            if (result.IsValid)
+            {
+                writerManager.Update(writer);
+                return RedirectToAction("WritersHeading", "WriterPanel");
+            }
+            else
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
             return View();
         }
 
