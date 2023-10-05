@@ -28,9 +28,9 @@ namespace BussinessLayer.Concrete
             _contentDAL.Delete(content);
         }
 
-        public List<Content> GetAll()
+        public List<Content> GetAll(string param)
         {
-            return _contentDAL.Get();
+            return _contentDAL.Get(x => x.Value.Contains(param));
         }
 
         public Content GetById(int id)
