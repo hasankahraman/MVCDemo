@@ -15,12 +15,14 @@ namespace MVCDemo.Controllers
         MessageManager manager = new MessageManager(new EFMessageDAL());
         public ActionResult Inbox()
         {
-            var messages = manager.GetAllInbox();
+            var user = (string)Session["Username"];
+            var messages = manager.GetAllInbox(user);
             return View(messages);
         }
         public ActionResult Sentbox()
         {
-            var messages = manager.GetAllSentbox();
+            var user = (string)Session["Username"];
+            var messages = manager.GetAllSentbox(user);
             return View(messages);
         }
         [HttpGet]
@@ -36,7 +38,7 @@ namespace MVCDemo.Controllers
 
             if (result.IsValid)
             {
-                message.SenderMail = "admin@gmail.com";
+                message.SenderMail = (string)Session["Username"];
                 message.Status = true;
                 message.CreatedAt = DateTime.Parse(DateTime.Now.ToShortDateString());
                 manager.Add(message);

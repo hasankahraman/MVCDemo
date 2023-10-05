@@ -28,14 +28,14 @@ namespace BussinessLayer.Concrete
             _messageDAL.Delete(message);
         }
 
-        public List<Message> GetAllInbox()
+        public List<Message> GetAllInbox(string email)
         {
-            return _messageDAL.Get().Where(x => x.Status == true).Where(x=> x.ReceiverMail == "admin@gmail.com").ToList();
+            return _messageDAL.Get().Where(x => x.Status == true).Where(x=> x.ReceiverMail == email).ToList();
         }
 
-        public List<Message> GetAllSentbox()
+        public List<Message> GetAllSentbox(string email)
         {
-            return _messageDAL.Get().Where(x => x.SenderMail == "admin@gmail.com").Where(x => x.Status == true).ToList();
+            return _messageDAL.Get().Where(x => x.SenderMail == email).Where(x => x.Status == true).ToList();
         }
 
         public Message GetById(int id)
