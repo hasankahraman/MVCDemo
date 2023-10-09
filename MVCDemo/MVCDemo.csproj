@@ -142,6 +142,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AdminCategoryController.cs" />
+    <Compile Include="Controllers\AuthController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\ChartController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
@@ -2527,6 +2528,8 @@
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Chart\Index.cshtml" />
     <Content Include="Views\Chart\Export.cshtml" />
+    <Content Include="Views\Chart\SweetAlert.cshtml" />
+    <Content Include="Views\Auth\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

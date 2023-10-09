@@ -1,12 +1,9 @@
 ﻿using BussinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using static MVCDemo.Controllers.ChartController;
 
 namespace MVCDemo.Controllers
 {
@@ -63,6 +60,11 @@ namespace MVCDemo.Controllers
         {
             var headings = hm.GetAll();
             return View(headings);
+        }
+
+        public ActionResult SweetAlert()
+        {
+            return View();
         }
 
     }
